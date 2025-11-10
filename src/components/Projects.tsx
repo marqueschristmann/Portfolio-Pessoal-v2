@@ -1,5 +1,6 @@
 import type { FC } from "react";
 import { Section } from "./Section";
+import type { GitHubRepo } from "../types";
 import { useGitHubRepos } from "../hooks/useGitHubRepos";
 import { motion } from "framer-motion";
 import {
@@ -28,15 +29,19 @@ const highlightedLanguages = [
   "JavaScript",
 ];
 
-const getLanguageClass = (lang: string) => {
+const getLanguageClass = (lang?: string | null) => {
+  if (!lang) return "border-gray-500 text-gray-500";
   if (lang === "JavaScript" || lang === "TypeScript")
     return languageColors["React"];
   return languageColors[lang] || "border-gray-500 text-gray-500";
 };
 
-const ProjectCard: FC<{ repo: any; index: number }> = ({ repo, index }) => {
+const ProjectCard: FC<{ repo: GitHubRepo; index: number }> = ({
+  repo,
+  index,
+}) => {
   const isHighlighted =
-    repo.language && highlightedLanguages.includes(repo.language);
+    !!repo.language && highlightedLanguages.includes(repo.language as string);
 
   return (
     <motion.div
@@ -66,7 +71,7 @@ const ProjectCard: FC<{ repo: any; index: number }> = ({ repo, index }) => {
             <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-neon-blue transition-colors duration-300" />
           </div>
           <p className="text-gray-400 text-sm grow mb-4">
-            {repo.description || "Sem descrição."}
+            {repo.description ?? "Sem descrição."}
           </p>
           <div className="flex justify-between items-center text-sm mt-auto">
             <span
@@ -74,7 +79,7 @@ const ProjectCard: FC<{ repo: any; index: number }> = ({ repo, index }) => {
                 repo.language
               )} font-semibold`}
             >
-              {repo.language || "N/A"}
+              {repo.language ?? "N/A"}
             </span>
             <div className="flex items-center space-x-4 text-gray-400">
               <div className="flex items-center">
