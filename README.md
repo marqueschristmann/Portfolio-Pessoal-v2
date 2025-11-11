@@ -2,7 +2,7 @@
 
 ## Demo
 
-🌐 [Visualizar Demo](https://meu-portfolio-gamma-ten.vercel.app/)
+🌐 [Visualizar Demo](https://portfolio-pessoal-v2.vercel.app/)
 
 ---
 
