@@ -1,6 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Download, Rocket } from "lucide-react";
+import profileImg from "../assets/profile.jpg";
+import resumePdf from "../assets/Curriculo_Jose_Marques.pdf";
 
 export const Hero: React.FC = () => {
   return (
@@ -17,7 +19,7 @@ export const Hero: React.FC = () => {
           transition={{ duration: 0.5 }}
         >
           <img
-            src="../../src/assets/profile.jpg"
+            src={profileImg}
             alt="José Marques da Silva"
             className="w-full h-full rounded-full object-cover"
           />
@@ -68,7 +70,7 @@ export const Hero: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.8 }}
         >
           <a
-            href="/Curriculo_Jose_Marques.pdf"
+            href={resumePdf}
             download
             className="group relative inline-flex items-center justify-center px-6 py-3 text-lg font-bold text-white transition-all duration-200 bg-dark-card border-2 border-neon-lime rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-dark-bg focus:ring-neon-lime hover:shadow-neon-lime-subtle"
           >
