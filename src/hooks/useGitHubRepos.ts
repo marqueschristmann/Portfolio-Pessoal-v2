@@ -116,7 +116,61 @@ export const useGitHubRepos = (username: string) => {
         finalRepos = finalRepos.slice(0, desired);
       }
 
-      setRepos(finalRepos);
+      // Se alguma descrição estiver vazia, tentamos extrair uma primeira parte
+      // do README (raw.githubusercontent.com) como fallback.
+      const fetchReadmeSnippet = async (owner: string, repoName: string) => {
+        const branches = ["main", "master"];
+        for (const b of branches) {
+          try {
+            const rawUrl = `https://raw.githubusercontent.com/${owner}/${repoName}/${b}/README.md`;
+            const resp = await fetch(rawUrl);
+            if (!resp.ok) continue;
+            const text = await resp.text();
+            if (!text) continue;
+
+            // extrai o primeiro parágrafo (primeira sequência de linhas não vazias)
+            const paragraphs = text
+              .split(/\r?\n\r?\n/)
+              .map((p) => p.trim())
+              .filter(Boolean);
+            if (paragraphs.length === 0) continue;
+            const first = paragraphs[0]
+              .split(/\r?\n/)
+              .map((l) => l.trim())
+              .filter(Boolean)
+              .join(" ");
+
+            // limpa Markdown básico (badges, imagens) para ficar legível
+            const cleaned = first
+              .replace(/!\[.*?\]\(.*?\)/g, "")
+              .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+              .replace(/#+\s*/g, "")
+              .trim();
+
+            if (cleaned) return cleaned;
+          } catch {
+            // ignore and try next branch
+            continue;
+          }
+        }
+        return null;
+      };
+
+      const owner = username;
+      const reposWithReadme = await Promise.all(
+        finalRepos.map(async (r) => {
+          if (r.description && r.description.trim().length > 0) return r;
+          try {
+            const snippet = await fetchReadmeSnippet(owner, r.name);
+            if (snippet) return { ...r, description: snippet };
+          } catch {
+            // noop
+          }
+          return r;
+        })
+      );
+
+      setRepos(reposWithReadme);
     } catch (err) {
       const errorMessage =
         err instanceof Error ? err.message : "An unknown error occurred";
