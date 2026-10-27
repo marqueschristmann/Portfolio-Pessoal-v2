@@ -4,7 +4,6 @@ import { BadgeCheck } from "lucide-react";
 import { motion } from "framer-motion";
 
 const certifications = [
-  "Ciência de Dados e Aprendizagem de Máquina (FIAP)",
   "Python para Geoprocessamento (Udemy)",
   "BIM – Escola Virtual (ENAP)",
   "Blockchain no Setor Público (ENAP)",

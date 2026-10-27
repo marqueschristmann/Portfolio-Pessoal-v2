@@ -1,6 +1,13 @@
 import React from "react";
 import { Section } from "./Section";
-import { AlignStartVertical, BrainCircuit, MapPin, Scale } from "lucide-react";
+import {
+  AlignStartVertical,
+  BrainCircuit,
+  MapPin,
+  Scale,
+  Wind,
+  ShoppingBag,
+} from "lucide-react";
 import { DataScienceCard } from "./DataScienceCard";
 import type { DataScienceProject } from "./DataScienceCard";
 
@@ -90,6 +97,34 @@ const dataScienceProjects: DataScienceProject[] = [
     icon: (
       <span className="text-emerald-600">
         <MapPin />
+      </span>
+    ),
+  },
+  {
+    id: 5,
+    name: "Gestão Operacional de Parques Eólicos",
+    description:
+      "Sistema em produção para gestão operacional de parques eólicos: acompanhamento de ativos, manutenções e indicadores de desempenho em um só lugar, trazendo mais controle e decisões baseadas em dados. Quer algo parecido para o seu negócio? Vamos conversar!",
+    url: "https://wa.me/5584981493410?text=Ol%C3%A1%20Marques!%20Vi%20o%20sistema%20de%20Parques%20E%C3%B3licos%20no%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar.",
+    ctaLabel: "Quero um sistema assim",
+    topics: ["Em Produção", "Gestão Operacional", "Energia Eólica", "Dashboard"],
+    icon: (
+      <span className="text-cyan-400">
+        <Wind />
+      </span>
+    ),
+  },
+  {
+    id: 6,
+    name: "Avlis LifeStyle",
+    description:
+      "Loja virtual completa da Avlis LifeStyle, com vitrine moderna, experiência de compra fluida e visual pensado para converter visitantes em clientes. Precisa de uma loja online? Me chame no WhatsApp!",
+    url: "https://wa.me/5584981493410?text=Ol%C3%A1%20Marques!%20Vi%20a%20loja%20Avlis%20LifeStyle%20no%20seu%20portf%C3%B3lio%20e%20quero%20uma%20loja%20virtual.",
+    ctaLabel: "Quero uma loja assim",
+    topics: ["E-commerce", "Loja Virtual", "Front-End", "UX"],
+    icon: (
+      <span className="text-pink-500">
+        <ShoppingBag />
       </span>
     ),
   },

@@ -60,7 +60,7 @@ export const Hero: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
         >
-          “Transformando ideias em soluções inteligentes.”
+          “Transformando ideias em soluções inteligentes. Vamos conversar sobre o seu projeto no WhatsApp?”
         </motion.p>
 
         <motion.div

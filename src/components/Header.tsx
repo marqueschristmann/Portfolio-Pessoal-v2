@@ -7,6 +7,7 @@ const navItems = [
   { name: "Sobre", href: "#about" },
   { name: "ciencia de dados", href: "#datascience" },
   { name: "Projetos", href: "#projects" },
+  { name: "Newsletter", href: "#newsletter" },
   { name: "Contato", href: "#contact" },
 ];
 

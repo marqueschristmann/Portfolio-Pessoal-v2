@@ -9,6 +9,7 @@ export interface DataScienceProject {
   url: string;
   topics: string[];
   icon: React.ReactElement;
+  ctaLabel?: string;
 }
 
 interface DataScienceCardProps {
@@ -56,7 +57,7 @@ export const DataScienceCard: React.FC<DataScienceCardProps> = ({
           </div>
           <div className="mt-auto pt-2">
             <span className="inline-flex items-center text-neon-blue font-semibold group-hover:text-neon-lime transition-colors duration-300">
-              Ver no GitHub
+              {project.ctaLabel ?? "Ver no GitHub"}
               <ExternalLink className="w-4 h-4 ml-2" />
             </span>
           </div>

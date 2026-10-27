@@ -43,8 +43,8 @@ export const Contact: React.FC = () => {
     <Section id="contact" title="Entre em Contato">
       <div className="text-center max-w-2xl mx-auto">
         <p className="text-lg text-gray-300 mb-8">
-          Estou sempre aberto a novas oportunidades e colaborações. Sinta-se à
-          vontade para entrar em contato ou enviar sua demanda freelancer.
+          Vamos tirar sua ideia do papel? 🚀 Conte para mim o que você precisa e
+          eu respondo rapidinho no WhatsApp, com orçamento sem compromisso!
         </p>
 
         <div className="flex flex-col md:flex-row justify-center items-center gap-8 mb-12">
@@ -98,7 +98,7 @@ export const Contact: React.FC = () => {
           whileTap={{ scale: 0.95 }}
           className="inline-block px-6 py-3 rounded-xl text-dark font-semibold text-lg transition-all duration-300 hover:bg-neon-blue hover:text-white shadow-neon-lime"
         >
-          Enviar Demanda Freelancer 🚀
+          Chamar no WhatsApp agora 💬
         </motion.a>
       </div>
     </Section>

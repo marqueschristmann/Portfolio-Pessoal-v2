@@ -3,14 +3,29 @@ import { Section } from "./Section";
 import { GraduationCap } from "lucide-react";
 import { motion } from "framer-motion";
 
-const educationItems = [
+const educationItems: {
+  degree: string;
+  institution: string;
+  period?: string;
+}[] = [
   {
-    degree: "Pós-Graduação em Engenharia de Software",
-    institution: "Centro Universitário América",
-    period: "2024 – 2025",
+    degree: "Pós - Engenharia de Software 🖥️",
+    institution: "Centro Universitário União das Américas",
   },
   {
-    degree: "Graduação em Análise e Desenvolvimento de Sistemas Web",
+    degree: "Pós - Ciência de Dados 📊",
+    institution: "FAMEF",
+  },
+  {
+    degree: "Pós - Cibersegurança - Red Team 🕵️‍♂️",
+    institution: "FIAP",
+  },
+  {
+    degree: "Técnico em Segurança do Trabalho 🦺",
+    institution: "Escola Politécnica Brasileira",
+  },
+  {
+    degree: "Graduação em Análise e Desenvolvimento de Sistemas Web 🎓",
     institution: "IFRN",
     period: "2020 – 2024",
   },
@@ -37,7 +52,9 @@ export const Education: FC = () => {
                 {item.degree}
               </h3>
               <p className="text-neon-blue font-semibold">{item.institution}</p>
-              <p className="text-gray-400 text-sm mt-1">{item.period}</p>
+              {item.period && (
+                <p className="text-gray-400 text-sm mt-1">{item.period}</p>
+              )}
             </div>
           </motion.div>
         ))}

@@ -13,6 +13,7 @@ import { Certifications } from "./components/Certifications";
 import { Contact } from "./components/Contact";
 import { AnimatedBackground } from "./components/AnimatedBackground";
 import { DataScience } from "./components/DataScience";
+import { Newsletter } from "./components/Newsletter";
 
 function App() {
   const { scrollYProgress } = useScroll();
@@ -23,14 +24,14 @@ function App() {
   });
 
   return (
-    <div className="relative antialiased">
+    <div className="relative antialiased overflow-x-clip">
       <AnimatedBackground />
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-neon-lime origin-left z-50"
         style={{ scaleX }}
       />
       <Header />
-      <main className="relative z-10 px-4 md:px-8 lg:px-16 overflow-x-hidden">
+      <main className="relative z-10 px-4 md:px-8 lg:px-16">
         <Hero />
         <About />
         <Education />
@@ -38,6 +39,7 @@ function App() {
         <Experience />
         <Projects />
         <DataScience />
+        <Newsletter />
         <Certifications />
         <Contact />
       </main>
