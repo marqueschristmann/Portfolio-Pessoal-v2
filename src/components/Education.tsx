@@ -38,7 +38,7 @@ export const Education: FC = () => {
         {educationItems.map((item, index) => (
           <motion.div
             key={index}
-            className="flex items-start space-x-6 p-6 bg-dark-card/50 backdrop-blur-sm rounded-lg border border-neon-blue/20 shadow-lg shadow-neon-blue/10"
+            className="flex items-start space-x-4 sm:space-x-6 p-4 sm:p-6 bg-dark-card/50 backdrop-blur-sm rounded-lg border border-neon-blue/20 shadow-lg shadow-neon-blue/10"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.5 }}
@@ -48,7 +48,7 @@ export const Education: FC = () => {
               <GraduationCap size={32} />
             </div>
             <div>
-              <h3 className="text-xl font-bold font-orbitron text-gray-100">
+              <h3 className="text-base sm:text-xl font-bold font-orbitron text-gray-100 break-words">
                 {item.degree}
               </h3>
               <p className="text-neon-blue font-semibold">{item.institution}</p>

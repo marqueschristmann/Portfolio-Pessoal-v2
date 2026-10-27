@@ -12,7 +12,7 @@ export const Hero: React.FC = () => {
     >
       <div className="z-10 flex flex-col items-center">
         <motion.div
-          className="w-60 h-60 md:w-48 md:h-48 rounded-full mb-8 bg-dark-card border-2 border-neon-blue flex items-center justify-center"
+          className="w-40 h-40 sm:w-48 sm:h-48 rounded-full mb-8 bg-dark-card border-2 border-neon-blue flex items-center justify-center"
           style={{ boxShadow: "0 0 15px rgba(0, 245, 255, 0.6)" }}
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -26,7 +26,7 @@ export const Hero: React.FC = () => {
         </motion.div>
 
         <motion.h1
-          className="text-3xl md:text-5xl lg:text-6xl font-orbitron font-bold mb-4"
+          className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-orbitron font-bold mb-4 break-words max-w-full"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -46,7 +46,7 @@ export const Hero: React.FC = () => {
         </motion.h3>
 
         <motion.h2
-          className="text-lg md:text-2xl text-gray-300 font-rajdhani mb-6 tracking-widest"
+          className="text-base sm:text-lg md:text-2xl text-gray-300 font-rajdhani mb-6 tracking-wide md:tracking-widest"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}

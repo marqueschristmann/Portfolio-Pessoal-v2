@@ -22,7 +22,7 @@ export const Section: FC<SectionProps> = ({ id, title, children }) => {
       viewport={{ once: true, amount: 0.2 }}
       variants={sectionVariants}
     >
-      <h2 className="text-3xl md:text-4xl font-orbitron font-bold text-center mb-12">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-orbitron font-bold text-center mb-8 md:mb-12 break-words">
         <span className="text-neon-lime">{title.split(" ")[0]}</span>
         <span className="text-neon-blue ml-2">
           {title.substring(title.indexOf(" ") + 1)}
