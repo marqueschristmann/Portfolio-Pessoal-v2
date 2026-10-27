@@ -165,10 +165,6 @@ const competencies = [
   },
 ];
 
-const container = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { staggerChildren: 0.2 } },
-};
 
 const item = {
   hidden: { opacity: 0, y: 20 },
@@ -182,18 +178,16 @@ export const Experience: FC = () => {
         {/* Linha da timeline */}
         <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-neon-lime/30" />
 
-        <motion.div
-          className="space-y-10"
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.05 }}
-        >
+        <div className="space-y-10">
           {experienceItems.map((exp, index) => (
             <motion.div
               key={exp.role + exp.company}
               className="relative pl-12 sm:pl-14"
               variants={item}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: "some" }}
+              transition={{ duration: 0.5 }}
             >
               <div className="absolute left-4 -translate-x-1/2 top-2 w-8 h-8 bg-dark-bg border-2 border-neon-lime rounded-full flex items-center justify-center z-10">
                 <Briefcase size={16} className="text-neon-lime" />
@@ -235,7 +229,7 @@ export const Experience: FC = () => {
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
 
       <div className="mt-16">

@@ -47,17 +47,17 @@ export const Contact: React.FC = () => {
           eu respondo rapidinho no WhatsApp, com orçamento sem compromisso!
         </p>
 
-        <div className="flex flex-col md:flex-row justify-center items-center gap-8 mb-12">
-          <div className="flex items-center gap-3 text-lg">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 mb-10 md:mb-12">
+          <div className="flex items-center gap-3 text-base sm:text-lg max-w-full">
             <Mail className="w-6 h-6 text-neon-lime" />
             <a
               href="mailto:marqueschristmann8@gmail.com"
-              className="hover:text-neon-lime transition-colors"
+              className="hover:text-neon-lime transition-colors break-all"
             >
               marqueschristmann8@gmail.com
             </a>
           </div>
-          <div className="flex items-center gap-3 text-lg">
+          <div className="flex items-center gap-3 text-base sm:text-lg">
             <Phone className="w-6 h-6 text-neon-blue" />
             <a
               href="tel:+5584981493410"
@@ -68,7 +68,7 @@ export const Contact: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex justify-center space-x-6 mb-10">
+        <div className="flex flex-wrap justify-center gap-3 sm:gap-6 mb-10">
           {socialLinks.map((link, index) => (
             <motion.a
               key={link.name}
@@ -76,14 +76,14 @@ export const Contact: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={link.name}
-              className="p-4 bg-dark-card rounded-full border-2 border-transparent transition-all duration-300 hover:border-neon-lime hover:shadow-neon-lime-subtle hover:-translate-y-1"
+              className="p-3 sm:p-4 bg-dark-card rounded-full border-2 border-transparent transition-all duration-300 hover:border-neon-lime hover:shadow-neon-lime-subtle hover:-translate-y-1"
               initial={{ opacity: 0, scale: 0.5 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.3, delay: index * 0.2 }}
             >
               {React.cloneElement(link.icon, {
-                className: "w-8 h-8 text-gray-300",
+                className: "w-6 h-6 sm:w-8 sm:h-8 text-gray-300",
               })}
             </motion.a>
           ))}
@@ -96,7 +96,7 @@ export const Contact: React.FC = () => {
           rel="noopener noreferrer"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="inline-block px-6 py-3 rounded-xl text-dark font-semibold text-lg transition-all duration-300 hover:bg-neon-blue hover:text-white shadow-neon-lime"
+          className="inline-block px-5 sm:px-6 py-3 rounded-xl text-dark font-semibold text-base sm:text-lg transition-all duration-300 hover:bg-neon-blue hover:text-white shadow-neon-lime"
         >
           Chamar no WhatsApp agora 💬
         </motion.a>

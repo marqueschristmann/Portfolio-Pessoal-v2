@@ -19,7 +19,7 @@ export const Section: FC<SectionProps> = ({ id, title, children }) => {
       className="py-16 md:py-24"
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: "some" }}
       variants={sectionVariants}
     >
       <h2 className="text-2xl sm:text-3xl md:text-4xl font-orbitron font-bold text-center mb-8 md:mb-12 break-words">
